@@ -1,8 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './styles.module.scss';
-////"test": "react-scripts test",
-const Counter = () => {
-    const [ count, setCount ] = useState(0);
+
+const Counter = ({ initialValue }) => {
+
+
+    const getValidInitialState = () => {
+      if (Number.isInteger(initialValue)) {
+        return initialValue;
+      }
+      return 0;
+    };
+    const [ count, setCount ] = useState(getValidInitialState);
+
+    /*useEffect(() => {
+      if(Number.isInteger(initialValue)) {
+        setCount(initialValue);
+      }
+    }, []);*/
 
     const _incrementCount = () => {
         setCount(count + 1);
@@ -11,7 +25,6 @@ const Counter = () => {
     const _decrementCount = () => {
         setCount(count - 1);
     };
-
 
     return (
         <div className={styles.counterContainer} data-test='counterContainer'>
