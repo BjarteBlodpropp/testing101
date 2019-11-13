@@ -1,0 +1,23 @@
+.counterContainer {
+  border: 1px dashed #09d3ac;
+  min-width: 400px;
+  min-height: 250px;
+
+  .button {
+    background-color: #09d3ac;
+    min-height: 40px;
+    min-width: 60px;
+    border: none;
+    margin: 5px;
+    border-radius: 4px;
+    font-size: xx-large;
+    color: #282c34;
+    font-weight: bold;
+    padding-bottom: 4px;
+    padding-left: 10px;
+
+    .disabled {
+      opacity: 0.3;
+    }
+  }
+}
