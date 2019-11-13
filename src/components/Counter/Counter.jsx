@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import styles from './styles.module.scss';
 
 const Counter = ({ initialValue }) => {
-
-
     const getValidInitialState = () => {
       if (Number.isInteger(initialValue)) {
         return initialValue;
